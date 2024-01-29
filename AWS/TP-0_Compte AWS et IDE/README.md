@@ -2,6 +2,8 @@
 
 # TP-0 : Compte AWS et IDE
 
+> ![Compte AWS et IDE] ![](./images/tp0.JPG)
+
 - Créer un compte AWS gratuit
 - Protégez votre compte root avec un mot de passe fort
 - Créer un compte nominattif avec les droits full admin et qui vous permettra de déployer les ressources
