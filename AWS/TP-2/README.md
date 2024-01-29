@@ -2,6 +2,8 @@
 
 # TP-2 : Déployez votre Ressource AWS avec terraform
 
+> ![Déployez votre ressource AWS avec Terraform] ![](./images/tp2.JPG)
+
 - Récupérez le secret et access key de votre compte (dans les paramètres sécurité de votre compte dans IAM)
  
 - Créez un paire de clé dans EC2 et nommez cette clé devops-<votre prenom>, un fichier devops-<votre prenom>.pem sera téléchargé (conservez la jalousement)
@@ -19,8 +21,6 @@
 - Appliquez la modification et constatez les changement apportées ainsi que dans le fichier tfstate
  
 - Supprimez votre ec2 
-
-> ![Déployez votre ressource AWS avec Terraform] ![](./images/tp2.JPG)
 
 
 # STEP BY STEP WORKING
