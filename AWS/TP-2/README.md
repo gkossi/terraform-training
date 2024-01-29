@@ -20,6 +20,8 @@
  
 - Supprimez votre ec2 
 
+> ![Déployez votre ressource AWS avec Terraform] ![](./images/tp2.JPG)
+
 
 # STEP BY STEP WORKING
 
