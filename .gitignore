@@ -1,0 +1,11 @@
+HELP.md
+
+### Directories ###
+.git/
+
+AWS/TP-2/devops-kossi.pem
+AWS/TP-2/.terraform/
+AWS/TP-2/*.tfstate
+AWS/TP-2/*.backup
+AWS/TP-2/*.hcl
+
