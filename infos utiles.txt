@@ -1,3 +1,7 @@
+
+--------------------------------------------------------------------------------
+GIT
+--------------------------------------------------------------------------------
 A/ CONFIGURATION DE GIT
 1. Vérifier la configuration
 git config --list //Afficher la config globale définie pour git
@@ -25,4 +29,11 @@ git checkout develop
 git pull origin main
 6. Récupérer toutes les branches :
 git fetch
+
+--------------------------------------------------------------------------------
+CONFIGURATION DU FICHIER AWS_CREDENTIALS
+--------------------------------------------------------------------------------
+[default]
+aws_access_key_id = "YOUR-ACCESS-KEY"
+aws_secret_access_key = "YOUR-SECRET-KEY"
 

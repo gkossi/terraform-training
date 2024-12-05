@@ -1,13 +1,13 @@
-variable instancetype {
+variable "instance_type" {
   type        = string
-  description = "set aws instance type"
   default     = "t2.nano"
+  description = "Configuration du type d'instance AWS"
 }
 
-variable aws_common_tag {
-  type        = map
-  description = "Set aws tag"
+variable "aws_common_tag" {
+  type = map(string)
   default = {
     Name = "ec2-ggs"
   }
+  description = "Configuration du tag sur l'instance ec2"
 }
