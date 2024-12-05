@@ -6,9 +6,9 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "terraform-backend-kossi"
-    key    = "kossi.tfstate"
-    region = "us-east-1"
+    bucket     = "terraform-backend-kossi"
+    key        = "kossi.tfstate"
+    region     = "us-east-1"
     access_key = "PUT YOUR OWN"
     secret_key = "PUT YOUR OWN"
   }
@@ -32,19 +32,19 @@ resource "aws_instance" "myec2" {
   security_groups = ["${aws_security_group.allow_ssh_http_https.name}"]
 
   provisioner "remote-exec" {
-     inline = [
-       "sudo amazon-linux-extras install -y nginx1.12",
-       "sudo systemctl start nginx"
-     ]
+    inline = [
+      "sudo amazon-linux-extras install -y nginx1.12",
+      "sudo systemctl start nginx"
+    ]
 
-   connection {
-     type = "ssh"
-     user = "ec2-user"
-     private_key = file("./devops-kossi.pem")
-     host = self.public_ip
-   }
-   }
-   root_block_device {
+    connection {
+      type        = "ssh"
+      user        = "ec2-user"
+      private_key = file("./devops-kossi.pem")
+      host        = self.public_ip
+    }
+  }
+  root_block_device {
     delete_on_termination = true
   }
 

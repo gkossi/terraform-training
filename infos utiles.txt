@@ -1,0 +1,89 @@
+
+--------------------------------------------------------------------------------
+GIT
+--------------------------------------------------------------------------------
+A/ CONFIGURATION DE GIT
+1. Vérifier la configuration
+git config --list //Afficher la config globale définie pour git
+git config --global --list //Afficher la config globale définie pour l'utilisateur de git
+git config --global user.email //Afficher l'email de l'utilisateur global de git
+git config user.email //Afficher l'email de l'utilisateur pour un projet spécifique
+user.email=kossi.gbenou@opsleading.com
+user.name=Kossi GBENOU
+
+2. Configurer les informations de l'utilisateur
+git config --global user.email gkossiboris@gmail.com //Afficher l'email de l'utilisateur global de git
+git config user.email gkossiboris@gmail.com //Définir l'email de l'utilisateur pour un projet spécifique
+
+B/ LES BRANCHES
+1. Voir la liste de branches :
+git branch
+2. Créer une nouvelle branche en local :
+git branch develop
+3. Basculer sur la nouvelle branche pour travailler :
+git checkout develop
+4. Envoyer la nouvelle branche sur le remote repository : 
+git push --set-upstream origin develop
+5. Récupérer les fichiers de la branche main en ligne vers la branche develop en locale :
+git checkout develop
+git pull origin main
+6. Récupérer toutes les branches :
+git fetch
+
+--------------------------------------------------------------------------------
+CONFIGURATION DU FICHIER AWS_CREDENTIALS
+--------------------------------------------------------------------------------
+[default]
+aws_access_key_id = "YOUR-ACCESS-KEY"
+aws_secret_access_key = "YOUR-SECRET-KEY"
+
+--------------------------------------------------------------------------------
+RESOLUTION DE PROBLEME DE VIOLATION
+--------------------------------------------------------------------------------
+(?) Learn how to resolve a blocked push
+https://docs.github.com/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-command-line#resolving-a-blocked-push
+
+(?) This repository does not have Secret Scanning enabled, but is eligible. Enable Secret Scanning to view and manage detected secrets.
+Visit the repository settings page, https://github.com/gkossi/terraform-training/settings/security_analysis
+
+remote:      —— Amazon AWS Access Key ID ——————————————————————————
+remote:        locations:
+remote:          - commit: 22cb35d499d125ff1eb4e47e9925cd6735195a3f
+remote:        (?) To push, remove secret from commit(s) or follow this URL to allow the secret.
+remote:        https://github.com/gkossi/terraform-training/security/secret-scanning/unblock-secret/2poB4e9Q77n82zlLe7nIOUM5diJ
+
+remote:       —— Amazon AWS Secret Access Key ——————————————————————
+remote:        locations:
+remote:          - commit: 22cb35d499d125ff1eb4e47e9925cd6735195a3f
+remote:            path: AWS/TP-3/aws_credentials:3
+remote:
+remote:        (?) To push, remove secret from commit(s) or follow this URL to allow the secret.
+remote:        https://github.com/gkossi/terraform-training/security/secret-scanning/unblock-secret/2poB4cArGQGnIEp7sVYUvBU8PnN
+
+https://docs.github.com/fr/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-command-line#resolving-a-blocked-push
+
+https://docs.github.com/fr/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-command-line#removing-a-secret-introduced-by-an-earlier-commit-on-your-branch
+
+- Identifier le commit le plus ancien qui embarque le aws_credentials:
+git log
+- Démarrer un rebase interactive:
+git rebase -i b4b2d6be2cd833a8d92f30ac2344f06e58288196~1
+git rebase -i b4b2d6be2~1
+git rebase -i e58288196~1
+*********************************************
+git rebase -i 22cb35d499d125ff1eb4e47e9925cd6735195a3f~1
+git rebase -i 22cb35d49~1
+git rebase -i 735195a3f~1
+*********************************************
+- Ajoutez les modifications à la zone intermédiaire :
+git add .
+- Validez vos changements en utilisant :
+git commit --amend
+- Exécutez git rebase --continue pour terminer la relocalisation
+- Envoyer vos modifications avec git push
+
+git add/rm AWS/TP-3/aws_credentials
+git rm AWS/TP-3/aws_credentials
+git commit --amend
+git rebase --continue
+git push
