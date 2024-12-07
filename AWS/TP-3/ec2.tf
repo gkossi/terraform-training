@@ -25,7 +25,7 @@ resource "aws_instance" "myec2" {
   ami             = data.aws_ami.app_ami.id
   instance_type   = var.instance_type
   tags            = var.aws_common_tag
-  key_name        = "devops-kossi"
+  key_name        = "devops-kossi" # expertdevops
   security_groups = ["${aws_security_group.tp3_allow_http_https.name}"]
 }
 

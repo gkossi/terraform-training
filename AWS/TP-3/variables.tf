@@ -7,7 +7,7 @@ variable "instance_type" {
 variable "aws_common_tag" {
   type = map(string)
   default = {
-    Name = "ec2-ggs"
+    Name = "ec2-ggs" # ec2-expertdevops
   }
   description = "Configuration du tag sur l'instance ec2"
 }
