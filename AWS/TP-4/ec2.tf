@@ -39,8 +39,8 @@ resource "aws_instance" "myec2" {
 }
 
 resource "aws_security_group" "tp4_allow_ssh_http_https" {
-  name        = "kossi-sg"
-  description = "Allow ssh, http and https inbound traffic"
+  name        = "tp4_allow_ssh_http_https" # kossi-sg
+  description = "Allow ssh, http and https inbound traffics and all other outbound trafics"
 
   # Règle pour autoriser le trafic entrant HTTP (port 80)
   ingress {
