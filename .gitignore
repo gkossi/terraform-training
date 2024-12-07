@@ -3,9 +3,28 @@ HELP.md
 ### Directories ###
 .git/
 
-AWS/TP-2/devops-kossi.pem
 AWS/TP-2/.terraform/
 AWS/TP-2/*.tfstate
 AWS/TP-2/*.backup
 AWS/TP-2/*.hcl
+
+AWS/TP-3/.terraform/
+AWS/TP-3/*.tfstate
+AWS/TP-3/*.backup
+AWS/TP-3/*.hcl
+
+AWS/TP-4/.terraform/
+AWS/TP-4/*.tfstate
+AWS/TP-4/*.backup
+AWS/TP-4/*.hcl
+
+AWS/TP-5/.terraform/
+AWS/TP-5/*.tfstate
+AWS/TP-5/*.backup
+AWS/TP-5/*.hcl
+
+AWS/TP-6/.terraform/
+AWS/TP-6/*.tfstate
+AWS/TP-6/*.backup
+AWS/TP-6/*.hcl
 
