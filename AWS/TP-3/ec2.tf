@@ -25,7 +25,7 @@ resource "aws_instance" "myec2" {
   ami             = data.aws_ami.app_ami.id
   instance_type   = var.instance_type
   tags            = var.aws_common_tag
-  key_name        = "devops-kossi" # expertdevops
+  key_name        = "expertdevops" # devops-kossi
   security_groups = ["${aws_security_group.tp3_allow_http_https.name}"]
 }
 
@@ -33,7 +33,7 @@ resource "aws_security_group" "tp3_allow_http_https" {
   name        = "tp3_allow_http_https"
   description = "Allow http and https inbound traffic"
 
-  # Règle pour autoriser le trafic HTTP (port 80)
+  # Règle pour autoriser le trafic entrant HTTP (port 80)
   ingress {
     description = "http from VPC"
     from_port   = 80
@@ -42,7 +42,7 @@ resource "aws_security_group" "tp3_allow_http_https" {
     cidr_blocks = ["0.0.0.0/0"] # Permettre l'accès de partout
   }
 
-  # Règle pour autoriser le trafic HTTPS (port 443)
+  # Règle pour autoriser le trafic entrant HTTPS (port 443)
   ingress {
     description = "TLS from VPC"
     from_port   = 443
@@ -50,18 +50,10 @@ resource "aws_security_group" "tp3_allow_http_https" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"] # Permettre l'accès de partout
   }
-
-/*   egress {
-    from_port        = 0
-    to_port          = 0
-    protocol         = "-1"
-    cidr_blocks      = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
-  } */
 }
 
 #EIP
-resource "aws_eip" "public_ip" {
+resource "aws_eip" "public-ip" {
   instance = aws_instance.myec2.id
   domain   = "vpc"
 }
