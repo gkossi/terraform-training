@@ -32,7 +32,6 @@ Amazon S3 -> Create bucket
 > ![Etape N°2-1 : Terraform init] ![](./images/3-dev-terraform-init.jpg)
 
 > ![Etape N°2-2 : Terraform plan] ![](./images/4-dev-terraform-plan.jpg)
-D:\2024\MyEazytrainingProjects\terraform-training\AWS\TP-6\images
 
 > ![Etape N°2-3 : Terraform apply] ![](./images/5-dev-terraform-apply.jpg)
 
@@ -51,3 +50,5 @@ D:\2024\MyEazytrainingProjects\terraform-training\AWS\TP-6\images
 ## Etape N°5 : Suppression des resources déployées
 > ![Etape N°5-1 : Terraform destroy (DEV)] ![](./images/14-dev-terraform-destroy.jpg)
 > ![Etape N°5-2 : Terraform destroy (PROD)] ![](./images/15-prod-terraform-destroy.jpg)
+
+D:\2024\MyEazytrainingProjects\terraform-training\AWS\TP-6\images
