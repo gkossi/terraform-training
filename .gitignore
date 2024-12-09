@@ -23,8 +23,12 @@ AWS/TP-5/*.tfstate
 AWS/TP-5/*.backup
 AWS/TP-5/*.hcl
 
-AWS/TP-6/.terraform/
-AWS/TP-6/*.tfstate
-AWS/TP-6/*.backup
-AWS/TP-6/*.hcl
+AWS/TP-6/dev/.terraform/
+AWS/TP-6/dev/*.tfstate
+AWS/TP-6/dev/*.backup
+AWS/TP-6/dev/*.hcl
+AWS/TP-6/prod/.terraform/
+AWS/TP-6/prod/*.tfstate
+AWS/TP-6/prod/*.backup
+AWS/TP-6/prod/*.hcl
 

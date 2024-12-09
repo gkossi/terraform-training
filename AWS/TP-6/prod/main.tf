@@ -1,24 +1,29 @@
+# Configuration du Provider AWS
 provider "aws" {
-  region     = "us-east-1"
-  access_key = "PUT YOUR OWN"
-  secret_key = "PUT YOUR OWN"
+  region                   = "us-east-1"
+  shared_credentials_files = ["C:/Users/BORIS/Downloads/aws_credentials"] # Utilisation de share_credenials_files
 }
 
+# Configuration du backend s3
 terraform {
   backend "s3" {
     bucket     = "terraform-backend-kossi"
-    key        = "kossi-prod.tfstate"
+    key        = "tp6-prod.tfstate"
     region     = "us-east-1"
-    access_key = "PUT YOUR OWN"
-    secret_key = "PUT YOUR OWN"
+    shared_credentials_files = ["C:/Users/BORIS/Downloads/aws_credentials"] # Utilisation de share_credenials_files
   }
 }
 
+# Appel du module ec2
 module "ec2" {
-  source       = "../modules/ec2module"
-  instancetype = "t2.micro"
+    source       = "../modules/ec2module" # Définition de la source du module
+
+  # Surcharge des différentes variables définies dans le module
+  instance_type = "t2.micro"
+
   aws_common_tag = {
     Name = "ec2-prod-kossi"
   }
-  sg_name = "prod-kossi-sg"
+
+  sg_name = "prod-sg-kossi"
 }
