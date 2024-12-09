@@ -56,7 +56,7 @@ resource "aws_security_group" "tp5_allow_ssh_http_https" {
   name        = "tp5_allow_ssh_http_https" # kossi-sg
   description = "Allow ssh, http and https inbound traffics and all other outbound trafics"
 
-  # Règle pour autoriser le trafic entrant HTTP (port 80)
+  # Règle pour autoriser le trafic entrant HTTPS (port 80)
   ingress {
     description = "TLS from VPC"
     from_port   = 443
@@ -65,7 +65,7 @@ resource "aws_security_group" "tp5_allow_ssh_http_https" {
     cidr_blocks = ["0.0.0.0/0"] # Permettre l'accès de partout
   }
 
-  # Règle pour autoriser le trafic entrant HTTPS (port 443)
+  # Règle pour autoriser le trafic entrant HTTP (port 443)
   ingress {
     description = "http from VPC"
     from_port   = 80
@@ -83,7 +83,7 @@ resource "aws_security_group" "tp5_allow_ssh_http_https" {
     cidr_blocks = ["0.0.0.0/0"] # Permettre l'accès de partout
   }
 
-   # Règle pour autoriser tout type de trafic sortant
+  # Règle pour autoriser tout type de trafic sortant
   egress {
     from_port   = 0
     to_port     = 0
